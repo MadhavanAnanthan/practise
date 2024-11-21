@@ -1,4 +1,4 @@
-package org.example;
+package org.example.multithreading;
 
 import java.util.concurrent.BlockingQueue;
 
@@ -22,5 +22,6 @@ public class Consumer implements  Runnable{
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+        //
     }
 }
