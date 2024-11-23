@@ -31,7 +31,7 @@ public class Main {
         producerThread.start();
         // Practise problem - utilize common resource to add and consume products - END
 
-        // Below is for producer and consumer problem - START
+        // Below is for producer and consumer problem - my example - START
         BlockingQueue<String> storage = new ArrayBlockingQueue<>(5);
         Thread producer = new Thread(new Producer(storage));
         Thread consumer = new Thread(new Consumer(storage));
