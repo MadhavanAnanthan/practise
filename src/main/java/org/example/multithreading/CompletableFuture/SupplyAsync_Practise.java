@@ -1,30 +1,33 @@
-package org.example.multithreading.ThreadPoolExecutor;
+package org.example.multithreading.CompletableFuture;
 
 import java.util.concurrent.*;
 
-// change the parameters in ThreadPoolExecutor object and understand more
-public class ThreadPoolExecutorPractise {
+
+public class SupplyAsync_Practise {
 
     public static void main(String[] args) {
 // executor object holds configuration about how thread's should execute
+
         ThreadPoolExecutor executor = new ThreadPoolExecutor
             (2, 4, 10L,
                 TimeUnit.MINUTES, new ArrayBlockingQueue<>(2),
                 new CustomThreadFactory(), new CustomRejectHandle());
 
-        executor.allowCoreThreadTimeOut(true);
+        CompletableFuture<String> supplyAsync = CompletableFuture.supplyAsync(() -> {
+            return "task done by -" + Thread.currentThread().getName();
+        }); // o/p - task done by -ForkJoinPool.commonPool-worker-1
 
-        for(int i = 1; i <=7; i++){
-            executor.submit(() -> {
-                try{
-                    Thread.sleep(3000);
-                }catch (Exception e){
-                    System.out.println("error" + e.getMessage());
-                }
-                System.out.println("Task processed by " + Thread.currentThread().getName());
-            });
+        CompletableFuture<String> supplyAsync1 = CompletableFuture.supplyAsync(() -> {
+            return "task done by -" + Thread.currentThread().getName();
+        }, executor); // o/p - task done by -Thread-0
+
+        try {
+            String s = supplyAsync.get();
+            System.out.println(s);
+        }catch (Exception e){
+            //
         }
-        executor.shutdown();
+
     }
 
 }
@@ -47,6 +50,4 @@ class CustomRejectHandle implements RejectedExecutionHandler {
     public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
         System.out.println("Task rejected : " + r.toString());
     }
-
-
 }
