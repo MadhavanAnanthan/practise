@@ -1,4 +1,4 @@
-package org.example.multithreading;
+package org.example.multithreading.basics;
 
 public class ProducerThread implements Runnable{
 
