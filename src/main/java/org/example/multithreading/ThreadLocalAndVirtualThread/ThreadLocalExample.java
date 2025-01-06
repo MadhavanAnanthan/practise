@@ -4,6 +4,8 @@ public class ThreadLocalExample {
     private static ThreadLocal<Integer> threadLocal = new ThreadLocal<>();
 
     public static void main(String[] args) {
+
+        double sqrt = java.lang.Math.sqrt(10.0);
         Thread t1 = new Thread(() -> {
             threadLocal.set(10);
             System.out.println("Thread 1: " + threadLocal.get());
