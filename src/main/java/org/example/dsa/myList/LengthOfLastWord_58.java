@@ -4,7 +4,7 @@ package org.example.dsa.myList;
  * @author Madhavan Ananthan
  * Ref : https://leetcode.com/problems/length-of-last-word/description/
  */
-public class LengthOfLastWord {
+public class LengthOfLastWord_58 {
 
     // Mine
     public static int lengthOfLastWordBrute(String s) {
