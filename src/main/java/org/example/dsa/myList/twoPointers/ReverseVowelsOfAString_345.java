@@ -1,5 +1,8 @@
-package org.example.dsa.myList;
-
+package org.example.dsa.myList.twoPointers;
+/*
+ * @author Madhavan Ananthan
+ * Ref : https://leetcode.com/problems/reverse-vowels-of-a-string/
+ */
 public class ReverseVowelsOfAString_345 {
     static boolean appearedVowels(char val){
         char[] vowels = {'a','e','i','o','u','A','E','I','O','U'};

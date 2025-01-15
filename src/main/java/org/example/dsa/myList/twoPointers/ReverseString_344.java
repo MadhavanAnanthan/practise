@@ -1,4 +1,4 @@
-package org.example.dsa.myList;
+package org.example.dsa.myList.twoPointers;
 /*
  * @author Madhavan Ananthan
  * Ref : https://leetcode.com/problems/reverse-string/description/?envType=problem-list-v2&envId=two-pointers

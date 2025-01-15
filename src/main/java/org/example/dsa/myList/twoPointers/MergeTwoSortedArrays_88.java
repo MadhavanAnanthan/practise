@@ -1,4 +1,4 @@
-package org.example.dsa.myList;
+package org.example.dsa.myList.twoPointers;
 
 import java.util.Arrays;
 import java.util.Map;
