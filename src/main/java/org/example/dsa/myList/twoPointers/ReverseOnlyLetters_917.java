@@ -1,5 +1,9 @@
-package org.example.dsa.myList;
+package org.example.dsa.myList.twoPointers;
 
+/*
+ * @author Madhavan Ananthan
+ * Ref : https://leetcode.com/problems/reverse-only-letters/description/
+ */
 public class ReverseOnlyLetters_917 {
     public static String reverseOnlyLettersBrute(String s) {
         StringBuilder ss= new StringBuilder(s.replaceAll("[^a-zA-Z]","")).reverse();
