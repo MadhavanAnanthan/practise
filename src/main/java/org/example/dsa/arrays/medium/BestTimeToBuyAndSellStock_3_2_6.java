@@ -1,6 +1,20 @@
 package org.example.dsa.arrays.medium;
+/*
+ * @author Madhavan Ananthan
+ * Ref : https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
+ */
+// Not able to solve this problem even on 2 times
+/*
+we need to understand the problem, we have to buy a stock on lowest
+price day and sell the stocks in highest price day and book the
+max profit.
 
-// Not able to solve this problem
+which means whenever min value is occured, we needs to update the
+ minimum value at the same time, we need to check the profit amount
+  and store the max profit amount.
+ */
+
+// TODO -check optimal function for more understanding
 public class BestTimeToBuyAndSellStock_3_2_6 {
     public static void main(String[] args) {
         int[] prices = {7,1,5,3,6,4};
@@ -11,15 +25,15 @@ public class BestTimeToBuyAndSellStock_3_2_6 {
 
     // O(N square) and O(1)
     static int bruteForce(int[] prices){
-        int minPrice=0;
+        int profit=0;
         for(int i=0; i<prices.length; i++){
             for(int j=i+1; j<prices.length;j++){
                 if(prices[j]>prices[i]){
-                    minPrice=Math.max(minPrice, prices[j]-prices[i]);
+                    profit=Math.max(profit, prices[j]-prices[i]);
                 }
             }
         }
-        return minPrice;
+        return profit;
     }
 
     // O(N) and O(1)
@@ -29,6 +43,19 @@ public class BestTimeToBuyAndSellStock_3_2_6 {
         for(int i=0; i<prices.length; i++){
             min = Math.min(min, prices[i]);
             max = Math.max(max, prices[i]-min);
+        }
+        // or
+        for(int i=0; i<prices.length; i++){
+            // If the currentDayPrice is less than previous lowest price ?
+            // update lowest price
+            if(prices[i]<min){
+                min=prices[i];
+            }
+            // if the current price is greater than minimum price ?
+            // then check the profit
+            else{
+                max = Math.max(max, prices[i]-min);
+            }
         }
         return max;
     }
