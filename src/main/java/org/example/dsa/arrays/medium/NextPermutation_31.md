@@ -2,6 +2,7 @@
 
 The term permutation refers to a mathematical calculation 
 of the number of ways a particular set can be arranged.
+Simply, How many types of combination, we can construct an array.
 
 Simply, If we give a value - <b>[1,2,3]</b>
 below is the sequecial way to find next permuatations
