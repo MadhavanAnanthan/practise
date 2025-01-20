@@ -2,6 +2,7 @@
 
 The term permutation refers to a mathematical calculation 
 of the number of ways a particular set can be arranged.
+Simply, How many types of combination, we can construct an array.
 
 Simply, If we give a value - <b>[1,2,3]</b>
 below is the sequecial way to find next permuatations
@@ -17,6 +18,13 @@ Simply no of values of factorial is equal to permutation steps. Also the final p
 
 To achieve this, we have to follow 4 steps for to solve in optimal way.
 
+Steps are defined in simple english for my understanding.
+1. Final goal is all numbers should be in descending order.
+2. So, if any ascending order exists, we should mark the index
+3. Then, we should find maximum number when compare with marked index and swap those 2 numbers.
+4. Finally reverse the remaining part (which is after the elements from marked index).
+
+Below steps are used to understand the code
 Step 1: Find the break-point, i: Break-point means the first index i from the back of the given array where arr[i] becomes smaller than arr[i+1].
 For example, if the given array is {2,1,5,4,3,0,0}, the break-point will be index 1(0-based indexing). Here from the back of the array, index 1 is the first index where arr[1] i.e. 1 is smaller than arr[i+1] i.e. 5.
 
