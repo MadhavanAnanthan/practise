@@ -17,6 +17,7 @@ public class Main {
 
         // This is the common shared resource to maintain thread safe as well as no locking mechanism
         AtomicIntegerArray atomicIntegerArray = new AtomicIntegerArray(100);
+        List<Integer> numbers =null;
 
         System.out.println("Current thread - " + Thread.currentThread().getName());
 
