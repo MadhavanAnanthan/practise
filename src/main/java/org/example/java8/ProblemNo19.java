@@ -18,8 +18,8 @@ public class ProblemNo19 {
 
         TreeMap<LocalDate, Double> map = transactions.stream().collect(Collectors.groupingBy(Transaction::getDate, TreeMap::new, Collectors.averagingDouble(Transaction::getAmount)));
         System.out.println(map);
-    }
 
+    }
 
     public static class Transaction {
         private LocalDate date;

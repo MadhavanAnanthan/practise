@@ -1,10 +1,8 @@
 package org.example.examples;
 
 import java.util.*;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
-public class StreamAPI {
+public class SecondHighestSalary {
     public static void main(String[] args) {
         String input = "swiss";
 

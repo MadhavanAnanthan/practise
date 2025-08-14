@@ -134,8 +134,26 @@ public class FindTheSumOfAllElementsInAList {
 
         // 26.
         // Refer -> Problem26
-    }
 
+        // 27.convert a list of integers into a comma-separated string
+        List<Integer> integerList = Arrays.asList(1, 2, 3, 4, 5);
+        integerList.stream().map(integer -> String.valueOf(integer)).collect(Collectors.joining(","));
+
+        // 28. You have a list of Order objects, each containing a List<Item> and a customerId. Write a Stream pipeline to find all unique Item names across all orders for a specific customerId.
+        // Refer -> Problem28
+
+        // 29. Implement a Stream pipeline to find the top 3 most frequent words in a given paragraph of text (case-insensitive). Consider punctuation and convert words to lowercase.
+        String para = "The cat sat on the mat. The cat is a fluffy cat. The dog is not a cat. The mat is small.";
+        Arrays.stream(para.toLowerCase()
+            .replaceAll("[^a-z\\s]", "")
+            .split("\\s+"))
+                .filter(word -> !word.isEmpty())
+                    .collect(Collectors.groupingBy(word -> word, Collectors.counting()))
+                   .entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+          .limit(3).map(e-> e.getKey()).collect(Collectors.toList());
+
+        // 30. Write a Java Stream program to flatten a Map<String, List<String>> where the key is a category and the value is a list of items, into a single List<String> of all items.
+    }
     private static int findStringLengthInDesc(String s1, String s2) {
         // option 1
         // return Integer.compare(s2.length(), s1.length());

@@ -39,6 +39,7 @@ BiFunction<Integer, Integer, Integer> f = Integer::sum;
         employees.add(new Employee("Charlie", "IT", 70000));
         employees.add(new Employee("David", "HR", 40000));
 
+
         List<Integer> numbers = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
 
         Stream<Integer> sorted = numbers.stream().sorted();
