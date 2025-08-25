@@ -43,7 +43,8 @@ BiFunction<Integer, Integer, Integer> f = Integer::sum;
         List<Integer> numbers = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
 
         Stream<Integer> sorted = numbers.stream().sorted();
-        List<Integer> collect = sorted.collect(Collectors.toList()).reversed();
+        List<Integer> collect =  sorted.sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+
         System.out.println(collect);
 
         System.out.println(
